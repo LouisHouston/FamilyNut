@@ -5,7 +5,7 @@ import { useThemeColor } from '@/hooks/use-theme-color';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link' | 'members' | 'memberCard';
 };
 
 export function ThemedText({
@@ -26,6 +26,8 @@ export function ThemedText({
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
         type === 'link' ? styles.link : undefined,
+        type === 'members' ? styles.members : undefined,
+        type === 'memberCard' ? styles.memberCard : undefined,
         style,
       ]}
       {...rest}
@@ -55,6 +57,20 @@ const styles = StyleSheet.create({
   link: {
     lineHeight: 30,
     fontSize: 16,
-    color: '#0a7ea4',
+    color: '#4c1f4b',
   },
+  members: {
+    fontSize: 18,
+    fontWeight: "600",
+    lineHeight: 24,
+    color: '#8d3cb5'
+  },
+  memberCard: {
+  width: "30%",
+  padding: 16,
+  marginVertical: 6,
+  borderRadius: 12,
+  borderWidth: 1,
+  borderColor: '#FFFFFF',
+  }
 });
